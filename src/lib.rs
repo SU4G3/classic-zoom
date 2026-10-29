@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 //! Classic Zoom, after WI Zoom's behaviour: hold the key (V by default) to
 //! zoom in 3x, turn the mouse wheel while holding it to zoom further in or
 //! out, and let go to snap back. The zoom is instant, and turning slows down

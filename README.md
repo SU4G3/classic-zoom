@@ -7,7 +7,7 @@
 
   [![Latest release](https://img.shields.io/github/v/release/SU4G3/classic-zoom?label=release&color=2e7d32)](https://github.com/SU4G3/classic-zoom/releases/latest)
   [![Build](https://img.shields.io/github/actions/workflow/status/SU4G3/classic-zoom/build.yml?branch=main&label=build)](https://github.com/SU4G3/classic-zoom/actions/workflows/build.yml)
-  [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+  [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](LICENSE)
   [![Minecraft](https://img.shields.io/badge/minecraft-26.3-5865F2)](#compatibility)
   [![Horizon mod API](https://img.shields.io/badge/horizon%20mod%20api-0.1-F0795A)](https://playhorizon.dev/docs/mods)
 </div>
@@ -117,4 +117,7 @@ every build.
 
 ## License
 
-MIT - see [LICENSE](LICENSE).
+GPL-3.0-or-later - see [LICENSE](LICENSE).
+
+Parts of `src/lib.rs` are adapted from Horizon's official Zoom mod, used
+under the MIT License - see [NOTICE](NOTICE).

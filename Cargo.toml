@@ -2,7 +2,7 @@
 name = "classic-zoom"
 version = "1.0.0"
 edition = "2024"
-license = "MIT"
+license = "GPL-3.0-or-later"
 description = "Hold V to zoom 3x, scroll to zoom further, release to snap back. A Horizon mod."
 repository = "https://github.com/SU4G3/classic-zoom"
 
