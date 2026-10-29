@@ -28,6 +28,7 @@ an instant zoom, the mouse wheel for more, and nothing to configure.
 - [How it differs from Horizon's own Zoom](#how-it-differs-from-horizons-own-zoom)
 - [Differences from WI Zoom](#differences-from-wi-zoom)
 - [Installing](#installing)
+- [Verifying a download](#verifying-a-download)
 - [Permissions](#permissions)
 - [Compatibility](#compatibility)
 - [Building](#building)
@@ -80,6 +81,21 @@ Both can be installed at once: they use different keys.
    folder.
 3. In game, open Options > Mods and turn **Classic Zoom** on. Mods start
    off.
+
+## Verifying a download
+
+Every release file is signed with [minisign](https://jedisct1.github.io/minisign/).
+The public key is in [`minisign.pub`](minisign.pub):
+
+```
+RWTOxMcIG6MtC0QQnhWEMC+nLKJ6+u4trV/rF+4juSRuow8W4b5P+CPS
+```
+
+Download the `.hmod` and its `.minisig` from the release, then:
+
+```sh
+minisign -Vm classic_zoom-1.0.0.hmod -P RWTOxMcIG6MtC0QQnhWEMC+nLKJ6+u4trV/rF+4juSRuow8W4b5P+CPS
+```
 
 ## Permissions
 
