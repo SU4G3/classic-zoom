@@ -4,9 +4,15 @@ Copyright (C) 2026 SU4G3
 Classic Zoom is licensed under the GNU General Public License v3.0 or later
 (see LICENSE).
 
-Parts of src/lib.rs are adapted from the official Zoom mod of Horizon
-(https://github.com/horizon-rust/horizon, mods/official/zoom), used under
-the MIT License below.
+Parts of this repository are adapted from Horizon
+(https://github.com/horizon-rust/horizon) and its mod registry
+(https://github.com/horizon-rust/horizon-mods), used under the MIT License
+below:
+
+- mixins/classic_zoom/ and proof.py follow the official native Zoom
+  (horizon-mods, native/zoom);
+- tools/native.py and tools/game.py are copied from horizon-mods'
+  native/tools, unchanged except for a comment.
 
 ---
 
