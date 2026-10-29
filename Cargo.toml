@@ -1,0 +1,18 @@
+[package]
+name = "classic-zoom"
+version = "1.0.0"
+edition = "2024"
+license = "MIT"
+description = "Hold V to zoom 3x, scroll to zoom further, release to snap back. A Horizon mod."
+repository = "https://github.com/SU4G3/classic-zoom"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Pinned to the Horizon revision this was built and tested against.
+horizon-mod-sdk = { git = "https://github.com/horizon-rust/horizon", rev = "8f0c178957cce584b9b2027823e01651006dab6d" }
+
+[profile.release]
+opt-level = "s"
+lto = true

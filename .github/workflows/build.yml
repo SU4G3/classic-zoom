@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+    tags: ["v*"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  # Keep in sync with the horizon-mod-sdk rev in Cargo.toml.
+  HORIZON_REV: 8f0c178957cce584b9b2027823e01651006dab6d
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup target add wasm32-unknown-unknown
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/cargo-horizon-mod
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: cargo-${{ env.HORIZON_REV }}-${{ hashFiles('Cargo.lock') }}
+
+      - name: Install cargo-horizon-mod
+        run: |
+          command -v cargo-horizon-mod || cargo install --locked \
+            --git https://github.com/horizon-rust/horizon --rev "$HORIZON_REV" cargo-horizon-mod
+
+      - name: Build and check
+        run: |
+          cargo horizon-mod build
+          cargo horizon-mod check target/horizon-mod/classic_zoom.hmod
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: classic_zoom
+          path: target/horizon-mod/classic_zoom.hmod
